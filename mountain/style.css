@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("img/background.jpg");
+}
+
+section{
+    width: 100%;
+    height: 100%;
+}
+
+#about{
+    background-color: rgb(156, 156, 156);
+}
+
+#contact{
+    background-color: gainsboro;
+    height: 60vh;
+}

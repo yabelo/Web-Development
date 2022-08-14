@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Contact</title>
+</head>
+
+<body>
+    <div class="container-contact">
+        <br>
+        <h1>Contact Us</h1>
+        <div class="contact-box">
+            <div class="contact-left">
+                <h3>Sent your request</h3>
+                <form onsubmit="sendEmail(); reset(); return false;">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input id="name" type="text" placeholder="Ariel Jab">
+                        </div>
+                        <div class="input-group">
+                            <label>Phone</label>
+                            <input id="phone" type="text" placeholder="+0123456789">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input id="email" type="email" placeholder="example@gmail.com">
+                        </div>
+                        <div class="input-group">
+                            <label>Subject</label>
+                            <input id="subject" type="text" placeholder="Project Demo">
+                        </div>
+                    </div>
+
+                    <label>Message</label>
+                    <textarea id="message" rows="5" placeholder="Write here your message."></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="contact-right">
+                <h3>Reach Us</h3>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:arieljab2@gmail.com" target="_blank">arieljab2@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td><a href="tel:+972543169811" target="_blank">+972543169811</a></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><a href="https://www.google.com/maps/place/%D7%A0%D7%97%D7%9C+%D7%99%D7%91%D7%A0%D7%90%D7%9C,+%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F+%D7%9E%D7%9B%D7%91%D7%99%D7%9D+%D7%A8%D7%A2%D7%95%D7%AA%E2%80%AD/@31.8955731,35.009287,17z/data=!4m5!3m4!1s0x1502cdc5e4036b9b:0xcab870cb1a10f460!8m2!3d31.8955686!4d35.0071037" target="_blank">Nahal Yavnaal 15</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .container-contact {
+            width: 80%;
+            margin: auto;
+        }
+
+        .container-contact .contact-box {
+            background: white;
+            display: flex;
+        }
+
+        .container-contact .contact-left {
+            flex-basis: 60%;
+            padding: 40px 60px;
+        }
+
+        .container-contact .contact-right {
+            flex-basis: 40%;
+            padding: 40px;
+            background: #1c00b5;
+            color: #fff;
+        }
+
+        .container-contact h1 {
+            margin-bottom: 10px;
+        }
+
+        .container-contact .input-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .container-contact .input-row .input-group {
+            flex-basis: 45%;
+        }
+
+        .container-contact input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            padding-bottom: 5px;
+        }
+
+        .container-contact textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            outline: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .container-contact label {
+            margin-bottom: 6px;
+            display: block;
+            color: #1c00b5;
+        }
+
+        .container-contact button {
+            background: #1c00b5;
+            width: 100px;
+            border: none;
+            outline: none;
+            color: #fff;
+            height: 35px;
+            border-radius: 30px;
+            margin-top: 20px;
+            box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
+        }
+
+        .container-contact button:hover {
+            opacity: .8;
+        }
+
+        .container-contact .contact-left h3 {
+            color: #1c00b5;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .container-contact .contact-right h3 {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .container-contact tr td:first-child {
+            padding-right: 20px;
+        }
+
+        .container-contact tr td {
+            padding-top: 20px;
+        }
+        .container-contact tr td a{
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            const email = document.getElementById("email");
+            const phone = document.getElementById("phone");
+            const name = document.getElementById("name");
+            const message = document.getElementById("message");
+            const subject = document.getElementById("subject");
+
+            if (checkMessage(email)) {
+                return alert("something went wrong");
+            }
+
+            Email.send({
+                SecureToken: "b1c72a1a-725c-444b-80db-4a3297bbcb01",
+                To: 'arieljab2@gmail.com',
+                From: email.value,
+                Subject: "Contact about: " + subject.value,
+                Body: "Hi " + name.value + ",\n\nSubject: " + subject.value + ", \n\nwe will contact you on " + phone.value + ".\n\nHave a nice day.\n\nThank you, Ariel."
+            }).then(
+                message => alert("Message sent.\nThank you.")
+            );
+        }
+
+        function checkMessage(email) {
+
+            if (email.value === null || email.value === undefined || email.value === "" || email.length <= 0)
+                return true;
+        }
+    </script>
+</body>
+
+</html>

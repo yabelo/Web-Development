@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+</head>
+
+<body>
+    <div class="container-header">
+        <header>
+            <div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contant Us</a></li>
+                </ul>
+            </nav>
+            <div class="empty"></div>
+        </header>
+    </div>
+    <style>
+        .container-header header {
+            width: 100%;
+            height: 60px;
+            background-color: #c7c7c7;
+            display: flex;
+            align-items: center;
+            margin: auto;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .container-header .logo {
+            flex: 1;
+        }
+
+        .container-header .logo img {
+            width: 150px;
+        }
+
+        .container-header .empty {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .container-header ion-icon {
+            font-size: 50px;
+        }
+
+        .container-header nav {
+            flex: 2;
+        }
+
+        .container-header nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+        }
+
+        .container-header nav ul li {
+            text-decoration: none;
+        }
+
+        .container-header nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</body>
+
+</html>
